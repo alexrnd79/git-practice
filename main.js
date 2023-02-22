@@ -1,14 +1,15 @@
-function noSpace(x) {
-  let arrayStr = x.split(" ");
-
-  return arrayStr.join("");
+function digitize(n) {
+  let m = Array.from(n.toString());
+  console.log(m);
+  let newArray = [];
+  for (i = m.length - 1; i >= 0; i--) {
+    console.log(`i = ${i} /// m[i] = ${m[i]} `);
+    newArray.push(Number(m[i]));
+  }
+  return newArray;
 }
 
-let aa = noSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
+// assert.deepEqual(digitize(35231),[1,3,2,5,3]);
+// assert.deepEqual(digitize(0),[0]);
 
-document.getElementsByTagName("h1")[0].innerHTML = aa;
-
-// assert.strictEqual(lovefunc(1,4), true)
-// assert.strictEqual(lovefunc(2,2), false)
-// assert.strictEqual(lovefunc(0,1), true)
-// assert.strictEqual(lovefunc(0,0), false)
+console.log(digitize(35231));
